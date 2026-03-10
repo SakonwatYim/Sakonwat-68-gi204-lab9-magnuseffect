@@ -18,7 +18,7 @@ public class TorqueRotate : MonoBehaviour
     {
         if(Keyboard.current.dKey.isPressed)
         {
-            ApplyTorque();
+            rb.AddTorque(new Vector3(0, 0, TorquePower));
         }
 
     }
@@ -28,10 +28,5 @@ public class TorqueRotate : MonoBehaviour
     {
         
     }
-    void ApplyTorque()
-    {
-        Vector3 forceDirection = new Vector3(TorquePower,0,0);
-        Vector3 pivotPoint = new Vector3(0, 0, 1);
-        Vector3.Cross(forceDirection, pivotPoint);
-    }
+    
 }
